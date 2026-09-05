@@ -15,22 +15,19 @@
       </div>
       <div class="score">score <strong id="score">0</strong></div>
     </header>
-
     <section class="arena" aria-label="boss arena">
       <div class="boss-card" id="bossCard">
         <div class="boss-label">boss: context limit</div>
-        <div class="boss-core" id="bossCore">100%</div>
+        <div class="boss-core" id="bossCore">0%</div>
         <div class="bar" aria-label="boss context bar"><span id="contextFill"></span></div>
         <div class="boss-state" id="bossState">normal phase</div>
       </div>
-
       <div class="lyrics" id="lyrics" aria-live="polite">gemini asked what the lyrics were for</div>
       <button id="hitButton" type="button">hit the context window</button>
       <p class="hint">press space or click to overload the boss</p>
     </section>
-
     <footer id="status">build the pressure. break the context window.</footer>
   </main>
-  <script src="game.js"></script>
+  <script type="module" src="game.js"></script>
 </body>
 </html>
