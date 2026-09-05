@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>context window massacre</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <header>
+      <div>
+        <p class="eyebrow">context window massacre</p>
+        <h1>boss battle</h1>
+      </div>
+      <div class="score">score <strong id="score">0</strong></div>
+    </header>
+
+    <section class="arena" aria-label="boss arena">
+      <div class="boss-card" id="bossCard">
+        <div class="boss-label">boss: context limit</div>
+        <div class="boss-core" id="bossCore">100%</div>
+        <div class="bar" aria-label="boss context bar"><span id="contextFill"></span></div>
+        <div class="boss-state" id="bossState">normal phase</div>
+      </div>
+
+      <div class="lyrics" id="lyrics" aria-live="polite">gemini asked what the lyrics were for</div>
+      <button id="hitButton" type="button">hit the context window</button>
+      <p class="hint">press space or click to overload the boss</p>
+    </section>
+
+    <footer id="status">build the pressure. break the context window.</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
