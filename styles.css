@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f4f4f5;
+  background: #09090b;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 35%, #27272a 0, #09090b 55%);
+}
+
+.game-shell {
+  width: min(900px, 92vw);
+  padding: 28px;
+}
+
+header, footer { display: flex; justify-content: space-between; align-items: center; }
+.eyebrow { margin: 0 0 4px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; opacity: .6; }
+h1 { margin: 0; font-size: clamp(28px, 5vw, 48px); }
+.score { font-variant-numeric: tabular-nums; opacity: .8; }
+
+.arena {
+  position: relative;
+  min-height: 560px;
+  margin-top: 24px;
+  padding: 42px;
+  overflow: hidden;
+  border: 1px solid #3f3f46;
+  border-radius: 28px;
+  background: rgba(9, 9, 11, .82);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .4);
+  transition: filter .2s ease, transform .2s ease;
+}
+
+.boss-card { text-align: center; }
+.boss-label { margin-bottom: 16px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .65; }
+.boss-core { font-size: clamp(60px, 12vw, 120px); font-weight: 900; line-height: 1; }
+.bar { height: 18px; margin: 24px auto 10px; max-width: 600px; overflow: hidden; border: 1px solid #52525b; border-radius: 999px; background: #18181b; }
+.bar span { display: block; width: 0%; height: 100%; border-radius: inherit; background: #f4f4f5; transition: width .12s ease; }
+.boss-state { font-size: 13px; text-transform: uppercase; letter-spacing: .14em; opacity: .65; }
+
+.lyrics {
+  min-height: 110px;
+  margin: 80px auto 28px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: clamp(20px, 4vw, 34px);
+  font-weight: 750;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 22px;
+  border: 1px solid #71717a;
+  border-radius: 14px;
+  color: #09090b;
+  background: #f4f4f5;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+button:active { transform: translateY(2px); }
+.hint { text-align: center; font-size: 12px; opacity: .45; }
+footer { margin-top: 18px; font-size: 12px; opacity: .5; }
+
+.compressed .arena { transform: scale(.96); filter: saturate(.65) contrast(1.18); }
+.compressed .lyrics { transform: scale(.88); }
+.compressed .boss-core { animation: pulse .5s infinite alternate; }
+
+@keyframes pulse { to { transform: scale(1.06); } }
+@keyframes glitch { 0%,100% { transform: translate(0); } 25% { transform: translate(3px,-2px); } 50% { transform: translate(-3px,2px); } 75% { transform: translate(2px,1px); } }
+.glitch { animation: glitch .16s linear 2; }
+
+@media (max-width: 600px) {
+  .game-shell { padding: 18px; }
+  .arena { min-height: 500px; padding: 28px 18px; }
+  .lyrics { margin-top: 60px; }
+}
